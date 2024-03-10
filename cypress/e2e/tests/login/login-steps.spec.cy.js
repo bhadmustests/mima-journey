@@ -26,6 +26,6 @@ When(/^User clicks on the Login Button$/, () => {
 });
 
 Then(/^User is able to login$/, () => {
-	cy.get('.AppPage_topside_name__7zj2X').should('have.text', "eyeballs")//Kindly add Id 
+    cy.Validate('.AppPage_topside_name__7zj2X')
 });
 

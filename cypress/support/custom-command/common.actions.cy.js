@@ -23,6 +23,10 @@ Cypress.Commands.add('clickElement', (element) => {
 
 Cypress.Commands.add('ClickAButton', (element) => {
     cy.get(element).should('exist').and('be.visible').click();
+})
+
+Cypress.Commands.add('Validate', (element) => {
+    cy.get(element).should('have.text', "e-markets") 
 
 })
 
