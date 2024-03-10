@@ -8,4 +8,5 @@ Feature: Testing the Login Scenerio
         When User Clicks Login Button
         And User fills in a valid email
         And User fills in a valid password
-        Then User clicks on the Login Button
+        And User clicks on the Login Button
+        Then User is able to login

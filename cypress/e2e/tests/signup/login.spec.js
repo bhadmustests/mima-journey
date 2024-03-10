@@ -10,7 +10,6 @@ describe('mima login', () => {
         cy.get('#password').type(data.password);
         cy.get("button[type='submit']").contains('Login').click()
         cy.get('.AppPage_topside_name__7zj2X').should('have.text', "eyeballs")//Kindly add Id 
-
       });
 })
 })
