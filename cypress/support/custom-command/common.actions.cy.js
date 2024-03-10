@@ -21,6 +21,11 @@ Cypress.Commands.add('clickElement', (element) => {
     cy.contains(element).should('be.visible').and('exist').click()
 })
 
+Cypress.Commands.add('ClickAButton', (element) => {
+    cy.get(element).should('exist').and('be.visible').click();
+
+})
+
 Cypress.Commands.add('selectReferalOption', () => {
     cy.get(sel.otherDetailsPage.heardAboutUs).should('be.visible').and('exist').click()
     cy.get(sel.otherDetailsPage.InsOption).should('be.visible').and('exist').click()
