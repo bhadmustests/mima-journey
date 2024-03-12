@@ -2,7 +2,9 @@
   "signUpPage": {
       "signupButton": ".Header2_header__nav__btn__wRKfY button:contains('Sign up')"
   },
-
+  "loginPage":{
+    "emailField": "#email"
+  },
   "basicDetailsPage": {
     "fullnameField": "#fullname",
     "bizNameField": "#businessname",

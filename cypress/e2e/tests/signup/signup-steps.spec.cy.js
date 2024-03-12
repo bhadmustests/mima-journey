@@ -14,10 +14,6 @@ before(function () {
   })
 })
 
-Given(/^User is on trymima page$/, () => {
-	cy.visit('/')
-});
-
 When(/^User selects how they heard about mima$/, () => {
 	cy.selectReferalOption()
 });

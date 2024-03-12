@@ -26,3 +26,7 @@ before(()=>{
         return  false;
     })
 })
+
+beforeEach(()=>{
+    cy.visit('/')
+})

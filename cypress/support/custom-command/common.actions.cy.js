@@ -17,8 +17,17 @@ before(function () {
     })
 })
 
+
 Cypress.Commands.add('clickElement', (element) => {
     cy.contains(element).should('be.visible').and('exist').click()
+})
+
+// Cypress.Commands.add('ClickAButton', (element) => {
+//     cy.get(element).should('exist').and('be.visible').click();
+// })
+
+Cypress.Commands.add('Validate', (element) => {
+    cy.get(element).should('have.text', "Quick Links") 
 })
 
 Cypress.Commands.add('selectReferalOption', () => {
@@ -106,5 +115,11 @@ Cypress.Commands.add('insert', (string) => {
             break
         case 'valid password':
             cy.typeAValue(sel.otherDetailsPage.passwordField, newPassword)
+            break
+        case 'valid login email':
+            cy.typeAValue(sel.loginPage.emailField, user.email)
+            break
+        case 'valid login password':
+            cy.typeAValue(sel.otherDetailsPage.passwordField, user.password)
     }
 })
