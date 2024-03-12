@@ -1,31 +1,16 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-const credentials = "credentials"
 
-Given(/^User is on the trymima page$/, () => {
-	cy.visit('/')
+When(/^User fills in a "([^"]*)"$/, (args1) => {
+	cy.insert(args1);
 });
 
-When(/^User Clicks Login Button$/, () => {
-	cy.ClickAButton("button[class='sc-imWYAI hgdAmX']")
+When(/^User clicks on the "([^"]*)" Button$/, (args1) => {
+	cy.clickElement(args1)
 });
 
-When(/^User fills in a valid login email$/, () => {
-	cy.fixture(credentials).then((data) => {
-        cy.get('#email').type(data.email);
-      });
-});
-
-When(/^User fills in a valid login password$/, () => {
-	cy.fixture(credentials).then((data) => {
-        cy.get('#password').type(data.password);
-      });
-});
-
-When(/^User clicks on the Login Button$/, () => {
-    cy.ClickAButton("button[type='submit']")
-});
-
-Then(/^User is able to login$/, () => {
-    cy.Validate('.QuickLinksCard_ql__title__WMSzo')
+Then(/^The user should see the content of the side tabs$/, (datatable) => {
+	datatable.hashes().forEach((row) => {
+		cy.contains(row.sidebar).should('exist').and('be.visible').and('contain', row.sidebar)
+	})
 });
 
