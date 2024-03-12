@@ -2,8 +2,8 @@ const { defineConfig } = require("cypress");
 const browserify = require("@badeball/cypress-cucumber-preprocessor/browserify");
 const preprocessor = require("@badeball/cypress-cucumber-preprocessor");
 
-function setupNodeEvents (on, config){
-  preprocessor.addCucumberPreprocessorPlugin(on, config);
+async function setupNodeEvents (on, config){
+  await preprocessor.addCucumberPreprocessorPlugin(on, config);
 
   on("file:preprocessor", browserify.default(config));
 
@@ -17,7 +17,6 @@ module.exports = defineConfig({
     viewportHeight: 900,
     viewportWidth: 1400,
     specPattern:  '**/*.feature',
-    // specPattern: "c",
     watchForFileChanges: false,
     setupNodeEvents,
   },

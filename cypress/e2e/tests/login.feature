@@ -6,7 +6,7 @@ Feature: Testing the Login Scenerio
     Scenario: A user should be able to login with a valid credentials
         Given User is on the trymima page
         When User Clicks Login Button
-        And User fills in a valid email
-        And User fills in a valid password
+        And User fills in a valid login email
+        And User fills in a valid login password
         And User clicks on the Login Button
         Then User is able to login

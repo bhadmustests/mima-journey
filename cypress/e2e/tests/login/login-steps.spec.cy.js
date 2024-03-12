@@ -9,13 +9,13 @@ When(/^User Clicks Login Button$/, () => {
 	cy.ClickAButton("button[class='sc-imWYAI hgdAmX']")
 });
 
-When(/^User fills in a valid email$/, () => {
+When(/^User fills in a valid login email$/, () => {
 	cy.fixture(credentials).then((data) => {
         cy.get('#email').type(data.email);
       });
 });
 
-When(/^User fills in a valid password$/, () => {
+When(/^User fills in a valid login password$/, () => {
 	cy.fixture(credentials).then((data) => {
         cy.get('#password').type(data.password);
       });
@@ -26,6 +26,6 @@ When(/^User clicks on the Login Button$/, () => {
 });
 
 Then(/^User is able to login$/, () => {
-    cy.Validate('.AppPage_topside_name__7zj2X')
+    cy.Validate('.QuickLinksCard_ql__title__WMSzo')
 });
 
