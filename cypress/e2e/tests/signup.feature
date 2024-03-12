@@ -2,9 +2,6 @@ Feature: Testing all SignUp Scenarios
     As a user,
     I should be able to SignUp
 
-    # Background:
-    #     Given User is on trymima page
-
     Scenario: A user should be able to signup with valid details
         When User Clicks "Sign up" Button
         And User fills in a "valid full name"
